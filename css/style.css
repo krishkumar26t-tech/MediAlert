@@ -208,3 +208,20 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+.activate-sos-btn {
+    display: inline-block;
+    margin-top: 18px;
+    padding: 12px 24px;
+    background-color: #087ea4;
+    color: white;
+    text-decoration: none;
+    border-radius: 9px;
+    font-size: 16px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.activate-sos-btn:hover {
+    background-color: #05617f;
+    transform: translateY(-2px);
+}
