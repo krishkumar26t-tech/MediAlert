@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Intelligent Health Analysis | MediAlert</title>
+
+    <link rel="stylesheet" href="css/health-analysis.css">
+    <link rel="stylesheet" href="css/navigation.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header class="main-header">
+
+        <a href="dashboard.html" class="brand">
+            🩺 MediAlert
+        </a>
+
+        <nav class="nav-actions">
+
+            <a href="dashboard.html" class="nav-link">
+                🏠 Dashboard
+            </a>
+
+            <div class="dropdown" id="featuresDropdown">
+
+                <button
+                    class="dropdown-button"
+                    id="featuresButton"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls="featuresMenu"
+                >
+                    All Features ▼
+                </button>
+
+                <div class="dropdown-menu" id="featuresMenu">
+
+                    <a href="dashboard.html#health">
+                        ❤️ Health Monitoring
+                    </a>
+
+                    <a href="analytics.html">
+                        📊 Analytics
+                    </a>
+
+                    <a href="health-analysis.html" class="active">
+                        🧠 Health Analysis
+                    </a>
+
+                    <a href="history.html">
+                        📋 Health History
+                    </a>
+
+                    <a href="add-record.html">
+                        ➕ Add Health Record
+                    </a>
+
+                    <a href="contacts.html">
+                        📞 Emergency Contacts
+                    </a>
+
+                    <a href="location.html">
+                        📍 GPS Location
+                    </a>
+
+                    <a href="sos.html">
+                        🚨 Emergency SOS
+                    </a>
+
+                    <a href="profile.html">
+                        👤 My Profile
+                    </a>
+
+                </div>
+
+            </div>
+
+            <button id="logoutBtn" class="nav-logout">
+                Logout
+            </button>
+
+        </nav>
+
+    </header>
+
+
+    <!-- Main Content -->
+    <main class="container">
+
+        <section class="page-heading">
+
+            <h1>🧠 Intelligent Health Analysis</h1>
+
+            <p>
+                Review your health measurements and understand
+                how they compare with general adult reference ranges.
+            </p>
+
+        </section>
+
+
+        <!-- Analysis Controls -->
+        <section class="analysis-controls">
+
+            <div>
+                <label for="recordType">Select Record Type</label>
+
+                <select id="recordType">
+                    <option value="manual">Manual Measurements</option>
+                    <option value="simulated">Simulated Measurements</option>
+                </select>
+            </div>
+
+            <button id="analyzeButton">
+                Analyse Health Records
+            </button>
+
+        </section>
+
+
+        <!-- Overall Result -->
+        <section class="overall-card">
+
+            <h2>Overall Screening Summary</h2>
+
+            <div id="overallStatus">
+                No analysis performed yet.
+            </div>
+
+            <p id="overallMessage">
+                Select a record type and click Analyse Health Records.
+            </p>
+
+        </section>
+
+
+        <!-- Individual Analysis -->
+        <section class="analysis-section">
+
+            <h2>Individual Health Analysis</h2>
+
+            <div class="analysis-grid" id="analysisResults">
+
+                <div class="analysis-card">
+                    <h3>❤️ Heart Rate</h3>
+                    <p class="reading">--</p>
+                    <p class="result">Awaiting analysis</p>
+                </div>
+
+                <div class="analysis-card">
+                    <h3>🫁 Oxygen Saturation</h3>
+                    <p class="reading">--</p>
+                    <p class="result">Awaiting analysis</p>
+                </div>
+
+                <div class="analysis-card">
+                    <h3>🌡️ Temperature</h3>
+                    <p class="reading">--</p>
+                    <p class="result">Awaiting analysis</p>
+                </div>
+
+                <div class="analysis-card">
+                    <h3>🩸 Blood Pressure</h3>
+                    <p class="reading">--</p>
+                    <p class="result">Awaiting analysis</p>
+                </div>
+
+                <div class="analysis-card">
+                    <h3>🧪 Blood Sugar</h3>
+                    <p class="reading">--</p>
+                    <p class="result">Awaiting analysis</p>
+                </div>
+
+            </div>
+
+        </section>
+        <!-- Historical Health Trends -->
+
+            <section class="trend-section">
+
+            <h2>📈 Historical Health Trends</h2>
+
+            <p class="trend-description">
+                Track how your health measurements change over time.
+            </p>
+
+            <div class="trend-summary" id="trendSummary">
+                Trend statistics will appear after analysis.
+            </div>
+
+            <div class="trend-grid">
+
+                <div class="trend-card">
+                    <h3>❤️ Heart Rate Trend</h3>
+                    <canvas id="heartTrendChart"></canvas>
+                </div>
+
+                <div class="trend-card">
+                    <h3>🫁 SpO₂ Trend</h3>
+                    <canvas id="spo2TrendChart"></canvas>
+                </div>
+
+                <div class="trend-card">
+                    <h3>🌡️ Temperature Trend</h3>
+                <canvas id="temperatureTrendChart"></canvas>
+                </div>
+
+                <div class="trend-card">
+                    <h3>🩸 Blood Pressure Trend</h3>
+                    <canvas id="bpTrendChart"></canvas>
+                </div>
+
+                <div class="trend-card">
+                    <h3>🧪 Blood Sugar Trend</h3>
+                    <canvas id="sugarTrendChart"></canvas>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Recommendations -->
+        <section class="recommendation-section">
+
+            <h2>💡 General Health Guidance</h2>
+
+            <div id="recommendations">
+                Recommendations will appear after analysis.
+            </div>
+
+        </section>
+
+
+        <!-- Disclaimer -->
+        <section class="disclaimer">
+
+            <h3>Important Medical Disclaimer</h3>
+
+            <p>
+                MediAlert provides educational screening information
+                based on general adult reference ranges. It does not
+                diagnose diseases or replace professional medical advice.
+            </p>
+
+            <p>
+                Results may be affected by age, activity, medications,
+                health conditions, measurement accuracy and other factors.
+                Seek professional medical advice when concerned.
+            </p>
+
+        </section>
+
+        <p id="loadingMessage" hidden>
+            Loading health records...
+        </p>
+
+        <p id="errorMessage" class="error"></p>
+
+    </main>
+
+
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="module" src="js/health-analysis.js"></script>
+    <script src="js/navigation.js"></script>
+
+</body>
+
+</html>

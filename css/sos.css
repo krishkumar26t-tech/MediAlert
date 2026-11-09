@@ -1,0 +1,214 @@
+/* ==============================
+   GLOBAL STYLES
+============================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f7fb;
+    color: #263445;
+}
+
+
+/* ==============================
+   MAIN CONTAINER
+============================== */
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 35px auto;
+}
+
+
+/* ==============================
+   PAGE HEADING
+============================== */
+
+.heading {
+    margin-bottom: 30px;
+}
+
+.heading h2 {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.heading p {
+    color: #64748b;
+    line-height: 1.6;
+}
+
+
+/* ==============================
+   SOS CARD
+============================== */
+
+.sos-card {
+    background: white;
+    padding: 40px 20px;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.06);
+}
+
+.sos-icon {
+    font-size: 60px;
+    margin-bottom: 15px;
+}
+
+.sos-card h2 {
+    margin-bottom: 15px;
+}
+
+.sos-card p {
+    color: #64748b;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+
+/* ==============================
+   SOS BUTTON
+============================== */
+
+#sosButton {
+    background: #dc2626;
+    color: white;
+    border: none;
+    padding: 20px 45px;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#sosButton:hover {
+    background: #b91c1c;
+}
+
+#sosButton:disabled {
+    opacity: 0.6;
+    cursor: wait;
+}
+
+.notice {
+    margin-top: 25px;
+    font-size: 13px;
+}
+
+#statusMessage {
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+
+/* ==============================
+   EMERGENCY DETAILS AND HISTORY
+============================== */
+
+.details-card,
+.history-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    margin-top: 25px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
+}
+
+.details-card h2,
+.history-card h2 {
+    margin-bottom: 20px;
+}
+
+
+/* ==============================
+   EMERGENCY EVENT CARDS
+============================== */
+
+.event-card {
+    border: 1px solid #e2e8f0;
+    border-radius: 9px;
+    padding: 18px;
+    margin-bottom: 15px;
+    overflow-wrap: anywhere;
+}
+
+.event-card h3 {
+    color: #dc2626;
+    margin-bottom: 12px;
+}
+
+.event-card p {
+    margin: 8px 0;
+    line-height: 1.5;
+}
+
+.event-status {
+    display: inline-block;
+    background: #fef3c7;
+    color: #92400e;
+    padding: 6px 10px;
+    border-radius: 15px;
+    font-size: 12px;
+}
+
+
+/* ==============================
+   ERROR MESSAGE
+============================== */
+
+.error {
+    color: #dc2626;
+    margin-top: 15px;
+}
+
+
+/* ==============================
+   DISCLAIMER
+============================== */
+
+.disclaimer {
+    text-align: center;
+    color: #64748b;
+    font-size: 13px;
+    line-height: 1.6;
+    margin: 25px 0;
+}
+
+
+/* ==============================
+   RESPONSIVE DESIGN
+============================== */
+
+@media (max-width: 600px) {
+
+    .container {
+        width: 94%;
+        margin: 25px auto;
+    }
+
+    .heading h2 {
+        font-size: 25px;
+    }
+
+    .sos-card {
+        padding: 30px 15px;
+    }
+
+    #sosButton {
+        width: 100%;
+    }
+
+    .details-card,
+    .history-card {
+        padding: 20px 15px;
+    }
+
+}

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GPS Location | MediAlert</title>
+
+    <link rel="stylesheet" href="css/location.css">
+    <link rel="stylesheet" href="css/navigation.css">
+</head>
+
+<body>
+
+    <!-- Shared Navigation -->
+    <header class="main-header">
+
+        <a href="dashboard.html" class="brand">
+            🩺 MediAlert
+        </a>
+
+        <nav class="nav-actions">
+
+            <a href="dashboard.html" class="nav-link">
+                🏠 Dashboard
+            </a>
+
+            <div class="dropdown" id="featuresDropdown">
+
+                <button
+                    class="dropdown-button"
+                    id="featuresButton"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls="featuresMenu"
+                >
+                    All Features ▼
+                </button>
+
+                <div class="dropdown-menu" id="featuresMenu">
+
+                    <a href="dashboard.html#health">
+                        ❤️ Health Monitoring
+                    </a>
+
+                    <a href="analytics.html">
+                        📊 Analytics
+                    </a>
+
+                    <a href="health-analysis.html">
+                        🧠 Intelligent Health Analysis
+                    </a>
+
+                    <a href="history.html">
+                        📋 Health History
+                    </a>
+
+                    <a href="add-record.html">
+                        ➕ Add Health Record
+                    </a>
+
+                    <a href="contacts.html">
+                        📞 Emergency Contacts
+                    </a>
+
+                    <a href="location.html" class="active">
+                        📍 GPS Location
+                    </a>
+
+                    <a href="sos.html">
+                        🚨 Emergency SOS
+                    </a>
+
+                    <a href="profile.html">
+                        👤 My Profile
+                    </a>
+
+                </div>
+            </div>
+
+            <button id="logoutBtn" class="nav-logout">
+                Logout
+            </button>
+
+        </nav>
+
+    </header>
+
+
+    <!-- Main Content -->
+    <main class="container">
+
+        <section class="page-heading">
+
+            <h2>GPS Location Sharing</h2>
+
+            <p>
+                Get your current location and share it with
+                your emergency contacts.
+            </p>
+
+        </section>
+
+
+        <section class="location-card">
+
+            <div class="location-icon">📍</div>
+
+            <h2>Your Current Location</h2>
+
+            <p id="locationStatus">
+                Click the button below to get your location.
+            </p>
+
+            <button id="getLocationBtn">
+                Get My Location
+            </button>
+
+
+            <div id="locationDetails" hidden>
+
+                <div class="coordinate">
+
+                    <h3>Latitude</h3>
+
+                    <p id="latitude">--</p>
+
+                </div>
+
+
+                <div class="coordinate">
+
+                    <h3>Longitude</h3>
+
+                    <p id="longitude">--</p>
+
+                </div>
+
+
+                <div class="coordinate">
+
+                    <h3>Accuracy</h3>
+
+                    <p id="accuracy">--</p>
+
+                </div>
+
+
+                <a
+                    id="mapLink"
+                    href="#"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Open Location in Google Maps
+                </a>
+
+
+                <div class="action-buttons">
+
+                    <button id="copyLocationBtn">
+                        Copy Location Link
+                    </button>
+
+                    <button id="shareLocationBtn">
+                        Share Location
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="information-card">
+
+            <h3>How does GPS sharing work?</h3>
+
+            <p>
+                MediAlert uses your browser's Geolocation API
+                to obtain your current coordinates after you
+                grant permission.
+            </p>
+
+            <p>
+                You can copy your location link or share it
+                using the available sharing options on your device.
+            </p>
+
+        </section>
+
+
+        <p class="disclaimer">
+
+            Privacy notice: Your location is saved to your
+            MediAlert account only when you request it.
+            Sharing requires your explicit action.
+
+        </p>
+
+        <p id="errorMessage" class="error"></p>
+
+    </main>
+
+
+    <!-- JavaScript -->
+    <script type="module" src="js/location.js"></script>
+    <script src="js/navigation.js"></script>
+
+</body>
+
+</html>

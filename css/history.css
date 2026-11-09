@@ -1,0 +1,186 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f7fb;
+    color: #263445;
+}
+
+/* Main Container */
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 35px auto;
+}
+
+/* Page Heading */
+
+.page-heading {
+    margin-bottom: 25px;
+}
+
+.page-heading h2 {
+    font-size: 28px;
+    margin-bottom: 8px;
+    color: #075985;
+}
+
+.page-heading p {
+    color: #64748b;
+}
+
+/* Summary Cards */
+
+.summary {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-bottom: 35px;
+}
+
+.summary-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+}
+
+.summary-card h3 {
+    color: #64748b;
+    font-size: 14px;
+}
+
+.summary-card p {
+    font-size: 27px;
+    font-weight: bold;
+    color: #087ea4;
+    margin-top: 12px;
+}
+
+/* History Section */
+
+.history-section {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+}
+
+.history-section h2 {
+    margin-bottom: 20px;
+    color: #075985;
+}
+
+/* Filter */
+
+.filter-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+
+.filter-container label {
+    font-weight: bold;
+}
+
+.filter-container select {
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background: white;
+    font-size: 14px;
+}
+
+/* Table */
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 1000px;
+}
+
+th,
+td {
+    padding: 13px;
+    text-align: center;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+th {
+    background: #075985;
+    color: white;
+    white-space: nowrap;
+}
+
+td {
+    font-size: 14px;
+}
+
+tr:hover {
+    background: #f1f7fa;
+}
+
+/* Messages */
+
+#loadingMessage {
+    color: #64748b;
+    margin: 15px 0;
+}
+
+#emptyMessage {
+    color: #64748b;
+    margin-top: 20px;
+}
+
+.error {
+    color: #dc2626;
+    margin-top: 15px;
+}
+
+/* Disclaimer */
+
+.disclaimer {
+    margin-top: 25px;
+    text-align: center;
+    color: #64748b;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* Responsive */
+
+@media (max-width: 850px) {
+
+    .summary {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 500px) {
+
+    .summary {
+        grid-template-columns: 1fr;
+    }
+
+    .container {
+        width: 94%;
+    }
+
+    .history-section {
+        padding: 15px;
+    }
+
+}

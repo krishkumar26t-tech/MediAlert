@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Analytics | MediAlert</title>
+
+    <link rel="stylesheet" href="css/analytics.css">
+    <link rel="stylesheet" href="css/navigation.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <!-- Navigation Header -->
+
+    <header class="main-header">
+
+        <a href="dashboard.html" class="brand">
+            🩺 MediAlert
+        </a>
+
+        <nav class="nav-actions">
+
+            <a href="dashboard.html" class="nav-link">
+                🏠 Dashboard
+            </a>
+
+            <div class="dropdown" id="featuresDropdown">
+
+                <button
+                    class="dropdown-button"
+                    id="featuresButton"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls="featuresMenu">
+
+                    All Features ▼
+
+                </button>
+
+                <div class="dropdown-menu" id="featuresMenu">
+
+                    <a href="dashboard.html#health">
+                        ❤️ Health Monitoring
+                    </a>
+
+                    <a href="analytics.html" class="active">
+                        📊 Analytics
+                    </a>
+
+                    <a href="health-analysis.html">
+                        🧠 Intelligent Health Analysis
+                    </a>
+
+                    <a href="history.html">
+                        📋 Health History
+                    </a>
+
+                    <a href="add-record.html">
+                        ➕ Add Health Record
+                    </a>
+
+                    <a href="contacts.html">
+                        📞 Emergency Contacts
+                    </a>
+
+                    <a href="location.html">
+                        📍 GPS Location
+                    </a>
+
+                    <a href="sos.html">
+                        🚨 Emergency SOS
+                    </a>
+
+                    <a href="profile.html">
+                        👤 My Profile
+                    </a>
+
+                </div>
+
+            </div>
+
+            <button id="logoutBtn" class="nav-logout">
+                Logout
+            </button>
+
+        </nav>
+
+    </header>
+
+
+    <main class="container">
+
+        <!-- Page Heading -->
+
+        <section class="page-heading">
+
+            <h2>Health Analytics</h2>
+
+            <p>
+                Visualize your recorded health readings and trends.
+            </p>
+
+        </section>
+
+
+        <!-- Date Filter -->
+
+        <section class="filter-section">
+
+            <label for="dateFilter">Select Time Period:</label>
+
+            <select id="dateFilter">
+
+                <option value="1">Last 24 Hours</option>
+                <option value="7" selected>Last 7 Days</option>
+                <option value="30">Last 30 Days</option>
+                <option value="all">All Records</option>
+
+            </select>
+
+        </section>
+
+
+        <!-- Statistics Cards -->
+
+        <section class="stats-grid">
+
+            <div class="stat-card">
+                <h3>Average Heart Rate</h3>
+                <p id="avgHeart">--</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Average SpO₂</h3>
+                <p id="avgSpo2">--</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Average Temperature</h3>
+                <p id="avgTemp">--</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Total Records</h3>
+                <p id="totalRecords">0</p>
+            </div>
+
+        </section>
+
+
+        <!-- Minimum and Maximum -->
+
+        <section class="range-section">
+
+            <h2>Minimum and Maximum Readings</h2>
+
+            <div class="range-grid">
+
+                <div class="range-card">
+                    <h3>Heart Rate</h3>
+                    <p id="heartMin">Minimum: --</p>
+                    <p id="heartMax">Maximum: --</p>
+                </div>
+
+                <div class="range-card">
+                    <h3>SpO₂</h3>
+                    <p id="spo2Min">Minimum: --</p>
+                    <p id="spo2Max">Maximum: --</p>
+                </div>
+
+                <div class="range-card">
+                    <h3>Temperature</h3>
+                    <p id="tempMin">Minimum: --</p>
+                    <p id="tempMax">Maximum: --</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Heart Rate Graph -->
+
+        <section class="chart-section">
+
+            <h2>Heart Rate Trend</h2>
+
+            <div class="chart-container">
+                <canvas id="heartChart"></canvas>
+            </div>
+
+        </section>
+
+
+        <!-- SpO2 Graph -->
+
+        <section class="chart-section">
+
+            <h2>SpO₂ Trend</h2>
+
+            <div class="chart-container">
+                <canvas id="spo2Chart"></canvas>
+            </div>
+
+        </section>
+
+
+        <!-- Temperature Graph -->
+
+        <section class="chart-section">
+
+            <h2>Temperature Trend</h2>
+
+            <div class="chart-container">
+                <canvas id="tempChart"></canvas>
+            </div>
+
+        </section>
+
+
+        <!-- Messages -->
+
+        <p id="loadingMessage">
+            Loading analytics...
+        </p>
+
+        <p id="errorMessage" class="error"></p>
+
+        <p id="emptyMessage" hidden>
+            No health readings found for this time period.
+        </p>
+
+
+        <!-- Disclaimer -->
+
+        <p class="disclaimer">
+
+            Demonstration only: Health readings may include simulated
+            and manually entered measurements. They are not medical
+            diagnoses or verified medical assessments.
+
+        </p>
+
+    </main>
+
+
+    <script type="module" src="js/analytics.js"></script>
+
+    <script src="js/navigation.js"></script>
+
+</body>
+
+</html>

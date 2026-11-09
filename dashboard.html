@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MediAlert | Health Dashboard</title>
+
+    <link rel="stylesheet" href="css/dashboard.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <div class="dashboard-container">
+
+        <!-- Sidebar -->
+
+        <aside class="sidebar">
+
+            <h2 class="logo">🩺 MediAlert</h2>
+
+            <p class="menu-heading">MAIN MENU</p>
+
+            <a href="dashboard.html" class="active">
+                🏠 Dashboard
+            </a>
+
+            <a href="#health">
+                ❤️ Health Monitoring
+            </a>
+
+            <a href="analytics.html">
+                📊 Analytics
+            </a>
+
+            <a href="health-analysis.html">
+                🧠 Intelligent Health Analysis
+            </a>
+
+            <a href="history.html">
+                📋 Health History
+            </a>
+
+            <a href="add-record.html">
+                ➕ Add Health Record
+            </a>
+
+            <p class="menu-heading">EMERGENCY & PROFILE</p>
+
+            <a href="contacts.html">
+                📞 Emergency Contacts
+            </a>
+
+            <a href="location.html">
+                📍 GPS Location
+            </a>
+
+            <a href="sos.html">
+                🚨 Emergency SOS
+            </a>
+
+            <a href="profile.html">
+                👤 My Profile
+            </a>
+
+            <button id="logoutBtn" class="logout-btn">
+                🚪 Logout
+            </button>
+
+        </aside>
+
+
+        <!-- Main Content -->
+
+        <main class="main-content">
+
+            <!-- Header -->
+
+            <header class="topbar">
+
+                <div>
+                    <h2>Health Dashboard</h2>
+                    <p>Welcome back, <span id="userName">User</span>!</p>
+                </div>
+
+                <div class="user-info">
+                    <div class="avatar">👤</div>
+                </div>
+
+            </header>
+
+
+            <!-- Welcome Section -->
+
+            <section class="welcome-section">
+
+                <div>
+                    <h1>Monitor Your Health</h1>
+
+                    <p>
+                        Your health information at a glance.
+                        Stay informed, stay safe.
+                    </p>
+                </div>
+
+                <div class="monitor-status">
+                    <span class="pulse"></span>
+                    <span>Demo Monitoring Active</span>
+                </div>
+
+            </section>
+
+
+            <!-- Health Cards -->
+
+            <section class="health-cards" id="health">
+
+                <div class="health-card">
+
+                    <div class="card-header">
+                        <h3>Heart Rate</h3>
+                        <span>❤️</span>
+                    </div>
+
+                    <h1>
+                        <span id="heartRate">--</span>
+                        <small>BPM</small>
+                    </h1>
+
+                    <p>Simulated live reading</p>
+
+                    <span class="card-status" id="heartStatus">
+                        Waiting...
+                    </span>
+
+                </div>
+
+
+                <div class="health-card">
+
+                    <div class="card-header">
+                        <h3>Blood Oxygen</h3>
+                        <span>🫁</span>
+                    </div>
+
+                    <h1>
+                        <span id="spo2">--</span>
+                        <small>%</small>
+                    </h1>
+
+                    <p>Simulated live reading</p>
+
+                    <span class="card-status" id="spo2Status">
+                        Waiting...
+                    </span>
+
+                </div>
+
+
+                <div class="health-card">
+
+                    <div class="card-header">
+                        <h3>Temperature</h3>
+                        <span>🌡️</span>
+                    </div>
+
+                    <h1>
+                        <span id="temperature">--</span>
+                        <small>°C</small>
+                    </h1>
+
+                    <p>Simulated live reading</p>
+
+                    <span class="card-status" id="temperatureStatus">
+                        Waiting...
+                    </span>
+
+                </div>
+
+
+                <div class="health-card">
+
+                    <div class="card-header">
+                        <h3>Overall Status</h3>
+                        <span>💚</span>
+                    </div>
+
+                    <h2 id="overallStatus">Checking...</h2>
+
+                    <p>Based on demonstration thresholds</p>
+
+                    <span class="card-status" id="overallMessage">
+                        Analyzing readings...
+                    </span>
+
+                </div>
+
+            </section>
+
+
+            <!-- Analytics Section -->
+
+            <section class="analytics-section" id="analytics">
+
+                <div class="section-heading">
+
+                    <div>
+                        <h2>Health Analytics</h2>
+                        <p>Live simulated health trends</p>
+                    </div>
+
+                    <span class="live-label">● LIVE</span>
+
+                </div>
+
+                <div class="chart-container">
+                    <canvas id="healthChart"></canvas>
+                </div>
+
+            </section>
+
+
+            <!-- Emergency Section -->
+
+            <section class="emergency-section" id="emergency">
+
+                <div class="emergency-content">
+
+                    <h2>Need Emergency Assistance?</h2>
+
+                    <p>
+                        Open the SOS page to record an emergency
+                        demonstration event.
+                    </p>
+
+                </div>
+
+                <button
+                    id="sosButton"
+                    class="sos-button"
+                    type="button">
+
+                    🚨 SOS EMERGENCY
+
+                </button>
+
+            </section>
+
+
+            <!-- Footer -->
+
+            <footer>
+
+                <p>
+                    © 2026 MediAlert | Smart Health Monitoring System
+                </p>
+
+                <p class="demo-notice">
+                    Demonstration mode: Health readings are simulated,
+                    not actual medical measurements.
+                </p>
+
+            </footer>
+
+        </main>
+
+    </div>
+
+
+    <script type="module" src="js/dashboard.js"></script>
+
+</body>
+</html>

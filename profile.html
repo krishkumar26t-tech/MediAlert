@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MediAlert - My Health Profile</title>
+
+    <link rel="stylesheet" href="css/profile.css">
+    <link rel="stylesheet" href="css/navigation.css">
+</head>
+
+<body>
+
+    <!-- Shared Navigation -->
+    <header class="main-header">
+
+        <a href="dashboard.html" class="brand">
+            🩺 MediAlert
+        </a>
+
+        <nav class="nav-actions">
+
+            <a href="dashboard.html" class="nav-link">
+                🏠 Dashboard
+            </a>
+
+            <div class="dropdown" id="featuresDropdown">
+
+                <button
+                    class="dropdown-button"
+                    id="featuresButton"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls="featuresMenu"
+                >
+                    All Features ▼
+                </button>
+
+                <div class="dropdown-menu" id="featuresMenu">
+
+                    <a href="dashboard.html#health">
+                        ❤️ Health Monitoring
+                    </a>
+
+                    <a href="analytics.html">
+                        📊 Analytics
+                    </a>
+
+                    <a href="health-analysis.html">
+                        🧠 Intelligent Health Analysis
+                    </a>
+
+                    <a href="history.html">
+                        📋 Health History
+                    </a>
+
+                    <a href="add-record.html">
+                        ➕ Add Health Record
+                    </a>
+
+                    <a href="contacts.html">
+                        📞 Emergency Contacts
+                    </a>
+
+                    <a href="location.html">
+                        📍 GPS Location
+                    </a>
+
+                    <a href="sos.html">
+                        🚨 Emergency SOS
+                    </a>
+
+                    <a href="profile.html" class="active">
+                        👤 My Profile
+                    </a>
+
+                </div>
+
+            </div>
+
+            <button id="logoutBtn" class="nav-logout">
+                Logout
+            </button>
+
+        </nav>
+
+    </header>
+
+
+    <!-- Main Content -->
+    <main class="container">
+
+        <div class="page-heading">
+
+            <h1>My Health Profile</h1>
+
+            <p>
+                Add and manage your personal and medical information.
+            </p>
+
+        </div>
+
+
+        <form id="profileForm">
+
+            <!-- Personal Information -->
+            <section class="form-section">
+
+                <h2>👤 Personal Information</h2>
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+
+                        <label for="fullName">Full Name</label>
+
+                        <input
+                            type="text"
+                            id="fullName"
+                            placeholder="Enter your full name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="age">Age</label>
+
+                        <input
+                            type="number"
+                            id="age"
+                            placeholder="Enter your age"
+                            min="1"
+                            max="120"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="gender">Gender</label>
+
+                        <select id="gender" required>
+
+                            <option value="">Select Gender</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
+                            <option value="Prefer not to say">
+                                Prefer not to say
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="bloodGroup">Blood Group</label>
+
+                        <select id="bloodGroup">
+
+                            <option value="">Select Blood Group</option>
+                            <option value="A+">A+</option>
+                            <option value="A-">A-</option>
+                            <option value="B+">B+</option>
+                            <option value="B-">B-</option>
+                            <option value="AB+">AB+</option>
+                            <option value="AB-">AB-</option>
+                            <option value="O+">O+</option>
+                            <option value="O-">O-</option>
+                            <option value="Unknown">Unknown</option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="height">Height (cm)</label>
+
+                        <input
+                            type="number"
+                            id="height"
+                            placeholder="Example: 175"
+                            min="1"
+                            max="300"
+                            step="0.1"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="weight">Weight (kg)</label>
+
+                        <input
+                            type="number"
+                            id="weight"
+                            placeholder="Example: 68"
+                            min="1"
+                            max="500"
+                            step="0.1"
+                        >
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- Medical Information -->
+            <section class="form-section">
+
+                <h2>🏥 Medical Information</h2>
+
+                <div class="form-group">
+
+                    <label for="conditions">
+                        Existing Medical Conditions
+                    </label>
+
+                    <textarea
+                        id="conditions"
+                        placeholder="Example: Asthma, Diabetes, Thyroid..."
+                    ></textarea>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="allergies">Known Allergies</label>
+
+                    <textarea
+                        id="allergies"
+                        placeholder="Example: Dust allergy, Food allergy..."
+                    ></textarea>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="medications">Current Medications</label>
+
+                    <textarea
+                        id="medications"
+                        placeholder="Enter your current medications..."
+                    ></textarea>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="medicalHistory">
+                        Previous Medical History
+                    </label>
+
+                    <textarea
+                        id="medicalHistory"
+                        placeholder="Enter relevant previous medical history..."
+                    ></textarea>
+
+                </div>
+
+            </section>
+
+
+            <!-- Doctor Information -->
+            <section class="form-section">
+
+                <h2>🩺 Doctor Information</h2>
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+
+                        <label for="doctorName">Doctor's Name</label>
+
+                        <input
+                            type="text"
+                            id="doctorName"
+                            placeholder="Enter doctor's name"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="doctorPhone">
+                            Doctor's Phone Number
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="doctorPhone"
+                            placeholder="Enter doctor's phone number"
+                        >
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- Save Button -->
+            <div class="button-container">
+
+                <button type="submit" id="saveProfileBtn">
+                    Save Health Profile
+                </button>
+
+            </div>
+
+            <p id="message"></p>
+
+        </form>
+
+    </main>
+
+
+    <!-- JavaScript -->
+    <script type="module" src="js/profile.js"></script>
+    <script src="js/navigation.js"></script>
+
+</body>
+
+</html>

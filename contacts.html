@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Emergency Contacts | MediAlert</title>
+
+    <link rel="stylesheet" href="css/contacts.css">
+    <link rel="stylesheet" href="css/navigation.css">
+</head>
+
+<body>
+
+    <!-- Navigation Header -->
+
+    <header class="main-header">
+
+        <a href="dashboard.html" class="brand">
+            🩺 MediAlert
+        </a>
+
+        <nav class="nav-actions">
+
+            <a href="dashboard.html" class="nav-link">
+                🏠 Dashboard
+            </a>
+
+            <div class="dropdown" id="featuresDropdown">
+
+                <button
+                    class="dropdown-button"
+                    id="featuresButton"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls="featuresMenu">
+
+                    All Features ▼
+
+                </button>
+
+                <div class="dropdown-menu" id="featuresMenu">
+
+                    <a href="dashboard.html#health">
+                        ❤️ Health Monitoring
+                    </a>
+
+                    <a href="analytics.html">
+                        📊 Analytics
+                    </a>
+
+                    <a href="health-analysis.html">
+                        🧠 Intelligent Health Analysis
+                    </a>
+
+                    <a href="history.html">
+                        📋 Health History
+                    </a>
+
+                    <a href="add-record.html">
+                        ➕ Add Health Record
+                    </a>
+
+                    <a href="contacts.html" class="active">
+                        📞 Emergency Contacts
+                    </a>
+
+                    <a href="location.html">
+                        📍 GPS Location
+                    </a>
+
+                    <a href="sos.html">
+                        🚨 Emergency SOS
+                    </a>
+
+                    <a href="profile.html">
+                        👤 My Profile
+                    </a>
+
+                </div>
+
+            </div>
+
+            <button id="logoutBtn" class="nav-logout">
+                Logout
+            </button>
+
+        </nav>
+
+    </header>
+
+
+    <main class="container">
+
+        <!-- Page Heading -->
+
+        <section class="page-heading">
+
+            <h2>Emergency Contact Management</h2>
+
+            <p>
+                Add and manage the people you want to contact in an emergency.
+            </p>
+
+        </section>
+
+
+        <!-- Add Contact Form -->
+
+        <section class="form-section">
+
+            <h2 id="formTitle">Add Emergency Contact</h2>
+
+            <form id="contactForm">
+
+                <input type="hidden" id="editContactId">
+
+                <label for="contactName">Full Name</label>
+
+                <input
+                    type="text"
+                    id="contactName"
+                    placeholder="Enter contact name"
+                    required
+                >
+
+                <label for="contactPhone">Phone Number</label>
+
+                <input
+                    type="tel"
+                    id="contactPhone"
+                    placeholder="Enter phone number"
+                    maxlength="15"
+                    required
+                >
+
+                <label for="relationship">Relationship</label>
+
+                <select id="relationship" required>
+
+                    <option value="">Select Relationship</option>
+                    <option value="Father">Father</option>
+                    <option value="Mother">Mother</option>
+                    <option value="Brother">Brother</option>
+                    <option value="Sister">Sister</option>
+                    <option value="Friend">Friend</option>
+                    <option value="Spouse">Spouse</option>
+                    <option value="Other">Other</option>
+
+                </select>
+
+                <label class="checkbox-label">
+
+                    <input type="checkbox" id="isPrimary">
+
+                    Set as Primary Emergency Contact
+
+                </label>
+
+                <div class="form-buttons">
+
+                    <button type="submit" id="saveButton">
+                        Add Contact
+                    </button>
+
+                    <button type="button" id="cancelButton" hidden>
+                        Cancel
+                    </button>
+
+                </div>
+
+                <p id="formMessage"></p>
+
+            </form>
+
+        </section>
+
+
+        <!-- Contact List -->
+
+        <section class="contacts-section">
+
+            <h2>My Emergency Contacts</h2>
+
+            <p id="loadingMessage">Loading contacts...</p>
+
+            <div id="contactsList" class="contacts-list"></div>
+
+            <p id="emptyMessage" hidden>
+                No emergency contacts added yet.
+            </p>
+
+            <p id="errorMessage" class="error"></p>
+
+        </section>
+
+
+        <p class="disclaimer">
+            Emergency contacts are stored for demonstration purposes.
+            Saving a contact does not automatically send notifications.
+        </p>
+
+    </main>
+
+
+    <script type="module" src="js/contacts.js"></script>
+
+    <script src="js/navigation.js"></script>
+
+</body>
+
+</html>
