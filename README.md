@@ -27,7 +27,7 @@ The current version is entirely software-based and does not require external har
 - Develop a centralized health monitoring web application.
 - Display simulated health readings through an interactive dashboard.
 - Allow users to manually enter health measurements.
-- Store health records securely using Firebase Authentication and Cloud Firestore.
+- Store health records using Firebase Authentication and Cloud Firestore.
 - Provide historical health records and graphical analytics.
 - Maintain personal and medical profile information.
 - Manage emergency contacts.
@@ -166,8 +166,22 @@ MediAlert/
 │   ├── navigation.js
 │   └── health-analysis.js
 │
+├── screenshots/
+│   ├── Add_Health_record.png
+│   ├── Dashboard_1.png
+│   ├── Dashboard_2.png
+│   ├── Emergency_contact.png
+│   ├── Emergency_SOS.png
+│   ├── GPS_location.png
+│   ├── Health_analytics.png
+│   ├── Health_history.png
+│   ├── health_profile.png
+│   ├── intelligent_health_analysis.png
+│   └── login.png
+│
 ├── package.json
 ├── package-lock.json
+├── README.md
 └── .gitignore
 ```
 
@@ -192,4 +206,176 @@ Follow these steps to run MediAlert locally.
 git clone https://github.com/krishkumar26t-tech/MediAlert.git
 ```
 
-### Step 2: Open
+### Step 2: Open the Project
+
+```bash
+cd MediAlert
+```
+
+Open the project folder in Visual Studio Code.
+
+### Step 3: Install Dependencies
+
+```bash
+npm install
+```
+
+### Step 4: Configure Firebase
+
+1. Create a Firebase project.
+2. Enable Email/Password authentication.
+3. Create a Cloud Firestore database.
+4. Configure the Firebase web application.
+5. Add your Firebase configuration to `js/firebase.js`.
+6. Configure appropriate Firestore security rules.
+
+Keep private server credentials and service-account keys out of the repository.
+
+### Step 5: Run the Application
+
+Open `index.html` using the VS Code Live Server extension.
+
+The application will run locally in your browser.
+
+**Note:** GPS functionality requires user permission and a secure context such as localhost or HTTPS.
+
+---
+
+## 🗄️ 7. Database Structure
+
+MediAlert uses Cloud Firestore to store user-specific information.
+
+The primary database structure is:
+
+```text
+users/
+  └── userId/
+       │
+       ├── health_readings/
+       │
+       ├── emergency_contacts/
+       │
+       ├── locations/
+       │
+       ├── emergency_events/
+       │
+       └── profile/
+            └── personal
+```
+
+Each authenticated user has their own data structure based on their Firebase Authentication UID.
+
+---
+
+## 🔒 8. Security and Privacy
+
+- Firebase Authentication is used for user authentication.
+- Firestore security rules restrict user data access based on authenticated user UID.
+- GPS location is requested only after user interaction.
+- Location sharing requires browser permission.
+- Personal and medical information should be handled carefully.
+
+The application is an academic prototype and requires additional security review before handling real users' sensitive health information.
+
+---
+
+## ⚠️ 9. Project Limitations
+
+- Health readings are simulated and are not obtained from actual medical sensors.
+- Manual measurements depend on user-provided information.
+- Health analysis is educational and is not a medical diagnosis.
+- SOS creates a demonstration event in Firestore.
+- Actual SMS, email and phone-call notifications are not implemented.
+- The current version does not integrate external medical hardware.
+- The application is a web-based prototype rather than a native mobile application.
+
+---
+
+## 🚀 10. Future Scope
+
+Possible future improvements include:
+
+- Integration with wearable health monitoring devices.
+- Real-time health data collection through external sensors.
+- Automated emergency SMS and email notifications.
+- Integration with additional emergency response services.
+- Mobile application development.
+- Advanced health trend analysis.
+- Improved data validation and security.
+- Cloud-based deployment and production monitoring.
+
+---
+
+## 🖥️ 11. Project Screenshots
+
+### 1. User Login
+![Login Page](screenshots/login.png)
+
+### 2. Health Dashboard
+![Health Dashboard](screenshots/Dashboard_1.png)
+
+### 3. Health Dashboard – Analytics and SOS
+![Dashboard Analytics](screenshots/Dashboard_2.png)
+
+### 4. Add Health Record
+![Add Health Record](screenshots/Add_Health_record.png)
+
+### 5. Health Analytics
+![Health Analytics](screenshots/Health_analytics.png)
+
+### 6. Health History
+![Health History](screenshots/Health_history.png)
+
+### 7. Intelligent Health Analysis
+![Intelligent Health Analysis](screenshots/intelligent_health_analysis.png)
+
+### 8. Emergency Contact Management
+![Emergency Contacts](screenshots/Emergency_contact.png)
+
+### 9. Emergency SOS
+![Emergency SOS](screenshots/Emergency_SOS.png)
+
+### 10. GPS Location Sharing
+![GPS Location](screenshots/GPS_location.png)
+
+### 11. My Health Profile
+![Health Profile](screenshots/health_profile.png)
+
+---
+
+## 👨‍💻 12. Developer Information
+
+**Developed by:** Krish Kumar  
+**Department:** CSE (IoT, CS, BT)  
+**Branch:** Computer Science and Engineering  
+**Institution:** Institute of Engineering and Management, Kolkata  
+**University:** University of Engineering and Management, Kolkata  
+**Semester:** 3rd Semester  
+**Academic Session:** 2026–2027  
+**Project Mentor:** Mr. Rupayan Halder
+
+**Project Contribution:** Individually designed and developed.
+
+---
+
+## 📜 13. Disclaimer
+
+MediAlert is an academic software demonstration project. It is not a certified medical device or emergency response service.
+
+All simulated readings are for demonstration purposes only. Health analysis must not be treated as medical advice. The SOS demonstration does not contact emergency services or notify registered contacts.
+
+In an actual emergency, contact the appropriate emergency services directly.
+
+---
+
+## ⭐ Acknowledgement
+
+This project was developed as part of the academic innovative project work for the Computer Science and Engineering department.
+
+Special acknowledgement to the project mentor and the institution for providing academic guidance and support.
+
+---
+
+**Repository:** [MediAlert on GitHub](https://github.com/krishkumar26t-tech/MediAlert)
+
+**© 2026 MediAlert | Academic Project**
